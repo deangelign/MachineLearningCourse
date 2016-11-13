@@ -1,0 +1,207 @@
+  ---------Avaliando qual regressor tem MAE medio melhor-----------
+  --------------iteracao 0------------------
+    
+    Fazendo o GridSearsh para o SVM regressor....
+    Finalizado o GridSearsh para o SVM regressor.
+    MAE do SVM obtido para o conjunto de treino: 2.63752261411com os parametros: {'kernel': 'rbf', 'C': 1024, 'gamma': 3.0517578125e-05}
+    MAE_SVM obtido para o conjunto de teste: 2.44669680027
+    
+    Fazendo o GridSearsh para a Random Forest regressor....
+    Finalizado o GridSearsh para a Random Forest regressor.
+    MAE do Random Forest obtido para o conjunto de treino: 2.74951833333com os parametros: {'max_features': 5, 'n_estimators': 1000, 'max_depth': None}
+    MAE_RF obtido para o conjunto de teste: 2.62521777778
+    
+    Fazendo o GridSearsh para o Gradien Boosting regressor....
+    Finalizado o GridSearsh para a Gradien Boosting regressor.
+    MAE do Gradient Boosting obtido para o conjunto de treino: 2.60238936066com os parametros: {'warm_start': True, 'loss': 'lad', 'learning_rate': 0.05, 'n_estimators': 200, 'max_features': 25, 'max_depth': 5}
+    MAE_GBM obtido para o conjunto de teste: 2.43879871517
+    
+    Fazendo o GridSearsh para a MLP regressor....
+    Finalizado o GridSearsh para a MLP regressor.
+    MAE da MLP obtido para o conjunto de treino: 2.75563506895 com os parametros: {'activation': 'relu', 'solver': 'lbfgs', 'learning_rate': 'adaptive', 'learning_rate_init': 0.1, 'hidden_layer_sizes': 10}
+    MAE_MLP obtido para o conjunto de teste: 2.64438878737
+    
+    --------------iteracao 1------------------
+    
+    Fazendo o GridSearsh para o SVM regressor....
+    Finalizado o GridSearsh para o SVM regressor.
+    MAE do SVM obtido para o conjunto de treino: 2.61555151011com os parametros: {'kernel': 'rbf', 'C': 1024, 'gamma': 3.0517578125e-05}
+    MAE_SVM obtido para o conjunto de teste: 2.55390398857
+    
+    Fazendo o GridSearsh para a Random Forest regressor....
+    Finalizado o GridSearsh para a Random Forest regressor.
+    MAE do Random Forest obtido para o conjunto de treino: 2.73538020833com os parametros: {'max_features': 5, 'n_estimators': 400, 'max_depth': None}
+    MAE_RF obtido para o conjunto de teste: 2.6799
+    
+    Fazendo o GridSearsh para o Gradient Boosting regressor....
+    Finalizado o GridSearsh para a Gradient Boosting regressor.
+    MAE do Gradient Boosting obtido para o conjunto de treino: 2.58492108456com os parametros: {'warm_start': True, 'loss': 'lad', 'learning_rate': 0.05, 'n_estimators': 150, 'max_features': 15, 'max_depth': 5}
+    MAE_GBM obtido para o conjunto de teste: 2.54023077294
+    
+    Fazendo o GridSearsh para a MLP regressor....
+    Finalizado o GridSearsh para a MLP regressor.
+    MAE da MLP obtido para o conjunto de treino: 2.74737792564 com os parametros: {'activation': 'relu', 'solver': 'lbfgs', 'learning_rate': 'adaptive', 'learning_rate_init': 0.01, 'hidden_layer_sizes': 20}
+    MAE_MLP obtido para o conjunto de teste: 2.72725484854
+    
+    --------------iteracao 2------------------
+    
+    Fazendo o GridSearsh para o SVM regressor....
+    Finalizado o GridSearsh para o SVM regressor.
+    MAE do SVM obtido para o conjunto de treino: 2.58719714803com os parametros: {'kernel': 'rbf', 'C': 1024, 'gamma': 3.0517578125e-05}
+    MAE_SVM obtido para o conjunto de teste: 2.62468739684
+    
+    Fazendo o GridSearsh para a Random Forest regressor....
+    Finalizado o GridSearsh para a Random Forest regressor.
+    MAE do Random Forest obtido para o conjunto de treino: 2.70552055556com os parametros: {'max_features': 5, 'n_estimators': 1000, 'max_depth': None}
+    MAE_RF obtido para o conjunto de teste: 2.74759944444
+    
+    Fazendo o GridSearsh para o Gradient Boosting regressor....
+    Finalizado o GridSearsh para a Gradient Boosting regressor.
+    MAE do Gradient Boosting obtido para o conjunto de treino: 2.56464288907com os parametros: {'warm_start': True, 'loss': 'lad', 'learning_rate': 0.05, 'n_estimators': 300, 'max_features': 25, 'max_depth': 5}
+    MAE_GBM obtido para o conjunto de teste: 2.60048280814
+    
+    Fazendo o GridSearsh para a MLP regressor....
+    Finalizado o GridSearsh para a MLP regressor.
+    MAE da MLP obtido para o conjunto de treino: 2.73105982845 com os parametros: {'activation': 'relu', 'solver': 'lbfgs', 'learning_rate': 'adaptive', 'learning_rate_init': 0.001, 'hidden_layer_sizes': 40}
+    MAE_MLP obtido para o conjunto de teste: 2.73508631434
+    
+    --------------iteracao 3------------------
+    
+    Fazendo o GridSearsh para o SVM regressor....
+    Finalizado o GridSearsh para o SVM regressor.
+    MAE do SVM obtido para o conjunto de treino: 2.59584689427com os parametros: {'kernel': 'rbf', 'C': 1024, 'gamma': 3.0517578125e-05}
+    MAE_SVM obtido para o conjunto de teste: 2.56593249172
+    
+    Fazendo o GridSearsh para a Random Forest regressor....
+    Finalizado o GridSearsh para a Random Forest regressor.
+    MAE do Random Forest obtido para o conjunto de treino: 2.73020173611com os parametros: {'max_features': 5, 'n_estimators': 400, 'max_depth': None}
+    MAE_RF obtido para o conjunto de teste: 2.68668472222
+    
+    Fazendo o GridSearsh para o Gradien Boosting regressor....
+    Finalizado o GridSearsh para a Gradien Boosting regressor.
+    MAE do Gradien Boosting obtido para o conjunto de treino: 2.57000932379com os parametros: {'warm_start': True, 'loss': 'lad', 'learning_rate': 0.05, 'n_estimators': 500, 'max_features': 20, 'max_depth': 3}
+    MAE_GBM obtido para o conjunto de teste: 2.52484084
+    
+    Fazendo o GridSearsh para a MLP regressor....
+    Finalizado o GridSearsh para a MLP regressor.
+    MAE da MLP obtido para o conjunto de treino: 2.73100224312 com os parametros: {'activation': 'relu', 'solver': 'lbfgs', 'learning_rate': 'adaptive', 'learning_rate_init': 0.1, 'hidden_layer_sizes': 20}
+    MAE_MLP obtido para o conjunto de teste: 2.69171006475
+    
+    --------------iteracao 4------------------
+    
+    Fazendo o GridSearsh para o SVM regressor....
+    Finalizado o GridSearsh para o SVM regressor.
+    MAE do SVM obtido para o conjunto de treino: 2.54757787135com os parametros: {'kernel': 'rbf', 'C': 1024, 'gamma': 3.0517578125e-05}
+    MAE_SVM obtido para o conjunto de teste: 2.72438685505
+    
+    Fazendo o GridSearsh para a Random Forest regressor....
+    Finalizado o GridSearsh para a Random Forest regressor.
+    MAE do Random Forest obtido para o conjunto de treino: 2.68115555556com os parametros: {'max_features': 5, 'n_estimators': 1000, 'max_depth': None}
+    MAE_RF obtido para o conjunto de teste: 2.83390277778
+    
+    Fazendo o GridSearsh para o Gradien Boosting regressor....
+    Finalizado o GridSearsh para a Gradien Boosting regressor.
+    MAE do Gradien Boosting obtido para o conjunto de treino: 2.52388440712com os parametros: {'warm_start': True, 'loss': 'lad', 'learning_rate': 0.05, 'n_estimators': 300, 'max_features': 10, 'max_depth': 5}
+    MAE_GBM obtido para o conjunto de teste: 2.7006730049
+    
+    Fazendo o GridSearsh para a MLP regressor....
+    Finalizado o GridSearsh para a MLP regressor.
+    MAE da MLP obtido para o conjunto de treino: 2.68368901954 com os parametros: {'activation': 'relu', 'solver': 'lbfgs', 'learning_rate': 'adaptive', 'learning_rate_init': 0.01, 'hidden_layer_sizes': 40}
+    MAE_MLP obtido para o conjunto de teste: 2.86200397185
+    
+    MAE's Medios:
+    MAE medio svm: 2.58312150649
+    MAE medio rf: 2.71466094444
+    MAE medio gbm: 2.56100522823
+    MAE medio mlp: 2.73208879737
+    
+    ----------Encontrando os melhores parametros----------
+    procurando os melhores parametros para GBM
+    Fazendo o GridSearsh para o Gradient Boosting regressor....
+    Finalizado o GridSearsh para a Gradient Boosting regressor.
+    MAE do Gradient Boosting obtido para o conjunto de treino: 2.63153270904com os parametros: {'warm_start': True, 'loss': 'lad', 'learning_rate': 0.05, 'n_estimators': 500, 'max_features': 20, 'max_depth': 3}
+    MAE_GBM obtido para o conjunto de teste: 2.46694393295
+    melhor GBM parametros ate o momento: 2.46694393295 n_estimators: 500 max_features: 20 max_depth: 3 learning_rate: 0.05 loss: lad warm_start: True
+    Fazendo o GridSearsh para o Gradient Boosting regressor....
+    Finalizado o GridSearsh para a Gradient Boosting regressor.
+    MAE do Gradient Boosting obtido para o conjunto de treino: 2.58072751187com os parametros: {'warm_start': True, 'loss': 'lad', 'learning_rate': 0.05, 'n_estimators': 500, 'max_features': 20, 'max_depth': 3}
+    MAE_GBM obtido para o conjunto de teste: 2.5729275424
+    melhor GBM parametros ate o momento: 2.46694393295 n_estimators: 500 max_features: 20 max_depth: 3 learning_rate: 0.05 loss: lad warm_start: True
+    Fazendo o GridSearsh para o Gradient Boosting regressor....
+    Finalizado o GridSearsh para a Gradient Boosting regressor.
+    MAE do Gradient Boosting obtido para o conjunto de treino: 2.51810597641com os parametros: {'warm_start': True, 'loss': 'lad', 'learning_rate': 0.05, 'n_estimators': 500, 'max_features': 5, 'max_depth': 5}
+    MAE_GBM obtido para o conjunto de teste: 2.6814374352
+    melhor GBM parametros ate o momento: 2.46694393295 n_estimators: 500 max_features: 20 max_depth: 3 learning_rate: 0.05 loss: lad warm_start: True
+    
+    criando o regressor gbm com os melhores parametros
+    computando a acuracia na base de treino.....
+    MAE obtido gbm foi de: 2.39355448822
+    aplicando o gbm nos dados de testes do professor....
+    -----------fim GBM---------------
+    procurando os melhores parametros para o SVM
+    Fazendo o GridSearsh para o SVM regressor....
+    Finalizado o GridSearsh para o SVM regressor.
+    MAE do SVM obtido para o conjunto de treino: 2.65569781569com os parametros: {'kernel': 'rbf', 'C': 1024, 'gamma': 3.0517578125e-05}
+    MAE_SVM obtido para o conjunto de teste: 2.47277150808
+    melhor SVM parametros ate o momento : 2.47277150808 C: 1024 gamma: 3.0517578125e-05 kernel: rbf
+    Fazendo o GridSearsh para o SVM regressor....
+    Finalizado o GridSearsh para o SVM regressor.
+    MAE do SVM obtido para o conjunto de treino: 2.60004832893com os parametros: {'kernel': 'rbf', 'C': 1024, 'gamma': 3.0517578125e-05}
+    MAE_SVM obtido para o conjunto de teste: 2.5924346562
+    melhor SVM parametros ate o momento : 2.47277150808 C: 1024 gamma: 3.0517578125e-05 kernel: rbf
+    Fazendo o GridSearsh para o SVM regressor....
+    Finalizado o GridSearsh para o SVM regressor.
+    MAE do SVM obtido para o conjunto de treino: 2.54232671106com os parametros: {'kernel': 'rbf', 'C': 1024, 'gamma': 3.0517578125e-05}
+    MAE_SVM obtido para o conjunto de teste: 2.69431843483
+    melhor SVM parametros ate o momento : 2.47277150808 C: 1024 gamma: 3.0517578125e-05 kernel: rbf
+    
+    criando o regressor svm com os melhores parametros
+    computando a acuracia na base de treino.....
+    MAE obtido svm foi de: 2.503736159
+    aplicado svm regressao nos dados de testes do professor....
+    -----------fim SVM---------------
+    procurando os melhores parametros para o RF
+    Fazendo o GridSearsh para o RF regressor....
+    Finalizado o GridSearsh para o RF regressor.
+    MAE do RF obtido para o conjunto de treino: 2.77151982655com os parametros: {'max_features': 25, 'n_estimators': 1000, 'max_depth': 5}
+    MAE_RF obtido para o conjunto de teste: 2.6546201756
+    melhor RF parametros ate o momento: 2.6546201756 n_estimators: 1000 max_features: 25 max_depth: 5
+    Fazendo o GridSearsh para o RF regressor....
+    Finalizado o GridSearsh para o RF regressor.
+    MAE do RF obtido para o conjunto de treino: 2.72502625com os parametros: {'max_features': 5, 'n_estimators': 400, 'max_depth': None}
+    MAE_RF obtido para o conjunto de teste: 2.7142025
+    melhor RF parametros ate o momento: 2.6546201756 n_estimators: 1000 max_features: 25 max_depth: 5
+    Fazendo o GridSearsh para o RF regressor....
+    Finalizado o GridSearsh para o RF regressor.
+    MAE do RF obtido para o conjunto de treino: 2.67163566667com os parametros: {'max_features': 5, 'n_estimators': 1000, 'max_depth': None}
+    MAE_RF obtido para o conjunto de teste: 2.802993
+    melhor RF parametros ate o momento: 2.6546201756 n_estimators: 1000 max_features: 25 max_depth: 5
+    
+    criando o regressor rf com os melhores parametros
+    computando a acuracia na base de treino.....
+    MAE obtido rf foi de: 2.67811448313
+    aplicado o rf regressao nos dados de testes do professor....
+    -----------fim RF---------------
+    procurando os melhores parametros para MLP
+    Fazendo o GridSearsh para a MLP regressor....
+    Finalizado o GridSearsh para a MLP regressor.
+    MAE da MLP obtido para o conjunto de treino: 2.79080819387 com os parametros: {'activation': 'relu', 'solver': 'lbfgs', 'learning_rate': 'adaptive', 'learning_rate_init': 0.01, 'hidden_layer_sizes': 30}
+    MAE_MLP obtido para o conjunto de teste: 2.65886581681
+    melhor MLP parametros ate o momento: 2.65886581681 hidden_layer_sizes: 30 solver: lbfgs activation: relu learning_rate: adaptive learning_rate_init: 0.01
+    Fazendo o GridSearsh para a MLP regressor....
+    Finalizado o GridSearsh para a MLP regressor.
+    MAE da MLP obtido para o conjunto de treino: 2.7548867066 com os parametros: {'activation': 'relu', 'solver': 'lbfgs', 'learning_rate': 'adaptive', 'learning_rate_init': 0.001, 'hidden_layer_sizes': 10}
+    MAE_MLP obtido para o conjunto de teste: 2.71538805998
+    melhor MLP parametros ate o momento: 2.65886581681 hidden_layer_sizes: 30 solver: lbfgs activation: relu learning_rate: adaptive learning_rate_init: 0.01
+    Fazendo o GridSearsh para a MLP regressor....
+    Finalizado o GridSearsh para a MLP regressor.
+    MAE da MLP obtido para o conjunto de treino: 2.67758162882 com os parametros: {'activation': 'relu', 'solver': 'lbfgs', 'learning_rate': 'adaptive', 'learning_rate_init': 0.1, 'hidden_layer_sizes': 40}
+    MAE_MLP obtido para o conjunto de teste: 2.83588101089
+    melhor MLP parametros ate o momento: 2.65886581681 hidden_layer_sizes: 30 solver: lbfgs activation: relu learning_rate: adaptive learning_rate_init: 0.01
+    
+    criando o regressor mlp com os melhores parametros
+    computando a acuracia na base de treino.....
+    MAE obtido mlp foi de: 2.68658044393
+    aplicando a mlp nos dados de testes do professor....
+    -----------fim MLP---------------
+    ---------------------fim de execucao---------------------

@@ -1,0 +1,41 @@
+Fazendo o GridSearsh para o SVM regressor....
+Finalizado o GridSearsh para o SVM regressor.
+acuracia: -0.037514793818; para {'kernel': 'rbf', 'C': 1024, 'gamma': 3.0517578125e-05}
+best so far SVM: 0.037514793818 C: 1024 gamma: 3.0517578125e-05 kernel: rbf
+Fazendo o GridSearsh para a Random Forest regressor....
+Finalizado o GridSearsh para a Random Forest regressor.
+acuracia: -0.0373974697623; para {'max_features': 25, 'n_estimators': 500, 'max_depth': None}
+best so far RF: 0.0373974697623 n_estimators: 500 max_features: 25 max_depth: None
+Fazendo o GridSearsh para o SVM regressor....
+Finalizado o GridSearsh para o SVM regressor.
+acuracia: -0.037520622489; para {'kernel': 'rbf', 'C': 1024, 'gamma': 3.0517578125e-05}
+best so far SVM: 0.037514793818 C: 1024 gamma: 3.0517578125e-05 kernel: rbf
+Fazendo o GridSearsh para a Random Forest regressor....
+Finalizado o GridSearsh para a Random Forest regressor.
+acuracia: -0.0372377379464; para {'max_features': 25, 'n_estimators': 1000, 'max_depth': None}
+best so far RF: 0.0372377379464 n_estimators: 1000 max_features: 25 max_depth: None
+Fazendo o GridSearsh para o SVM regressor....
+Finalizado o GridSearsh para o SVM regressor.
+acuracia: -0.037418810949; para {'kernel': 'rbf', 'C': 1024, 'gamma': 3.0517578125e-05}
+best so far SVM: 0.037418810949 C: 1024 gamma: 3.0517578125e-05 kernel: rbf
+Fazendo o GridSearsh para a Random Forest regressor....
+Finalizado o GridSearsh para a Random Forest regressor.
+acuracia: -0.0397222222222; para {'max_features': 25, 'n_estimators': 500, 'max_depth': None}
+best so far RF: 0.0372377379464 n_estimators: 1000 max_features: 25 max_depth: None
+Fazendo o GridSearsh para o SVM regressor....
+Finalizado o GridSearsh para o SVM regressor.
+acuracia: -0.0373507430521; para {'kernel': 'rbf', 'C': 1024, 'gamma': 3.0517578125e-05}
+best so far SVM: 0.0373507430521 C: 1024 gamma: 3.0517578125e-05 kernel: rbf
+Fazendo o GridSearsh para a Random Forest regressor....
+Finalizado o GridSearsh para a Random Forest regressor.
+acuracia: -0.0405386644454; para {'max_features': 25, 'n_estimators': 200, 'max_depth': None}
+best so far RF: 0.0372377379464 n_estimators: 1000 max_features: 25 max_depth: None
+Fazendo o GridSearsh para o SVM regressor....
+Finalizado o GridSearsh para o SVM regressor.
+acuracia: -0.0377193910461; para {'kernel': 'rbf', 'C': 1024, 'gamma': 3.0517578125e-05}
+best so far SVM: 0.0373507430521 C: 1024 gamma: 3.0517578125e-05 kernel: rbf
+Fazendo o GridSearsh para a Random Forest regressor....
+Finalizado o GridSearsh para a Random Forest regressor.
+acuracia: -0.0377410850562; para {'max_features': 25, 'n_estimators': 300, 'max_depth': None}
+best so far RF: 0.0372377379464 n_estimators: 1000 max_features: 25 max_depth: None
+
