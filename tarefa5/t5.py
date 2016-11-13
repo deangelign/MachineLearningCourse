@@ -16,8 +16,6 @@ values = np.loadtxt('train.csv', delimiter = ',', usecols=(0,));
 data_test_professor = np.genfromtxt('test.csv', delimiter = ',', dtype=str, usecols=range(0,32));
 total_data = np.concatenate((data,data_test_professor),axis=0)
 
-#dataList= data.tolist()
-#dataList_test= data_test.tolist()
 total_data_list = total_data.tolist()
 indices = [0,1,2,9,12,13,17,18,20,22,23,24,25,26,30,31]
 
@@ -36,8 +34,9 @@ X_data_test_professor = X_total[9000:,:];
 parameters_svm = [{'kernel': ['rbf'], 'gamma': [2**(-15), 2**(-10), 2**(-5), 2**(0), 2**(5), 2**(10), 2**(15)],
                    'C': [2**(-10), 2**(-5), 2**(0), 2**(5), 2**(10)]} ]
 parameters_rf = {'n_estimators': [50, 100, 200, 300,400, 500, 1000], 'max_features':[5, 10, 15, 20, 25], 'max_depth':[5,None]}
-parameters_gbm = {'n_estimators': [10, 30, 70, 100, 150, 200, 300], 'learning_rate':[0.5, 0.1, 0.05, 0.01], 'max_depth':[3,5,10],
-                  'max_features': [5, 10, 15, 20, 25,None]}
+parameters_gbm = {'n_estimators': [30, 70, 100, 150, 200, 300, 500], 'loss':['lad'],
+                  'max_depth': [3, 5, 10],
+                  'max_features': [5, 10, 15, 20, 25, None], 'warm_start':[True, False],  'learning_rate':[0.1, 0.05, 0.01]}
 parameters_mlp = {'hidden_layer_sizes': [(10),(20),(30),(40)], 'solver':['lbfgs'],'activation':['logistic','relu'],
                   'learning_rate' : ['adaptive'], 'learning_rate_init':[0.001,0.01,0.1,1]}
 
@@ -314,33 +313,3 @@ for i in range(0,4):
     del names[min_index]
     del MAE_mean_all[min_index]
 print "---------------------fim de execucao---------------------"
-
-# svmObj = SVR(C=svm_c_best,gamma=svm_gamma_best,kernel=svm_kernel_best);
-# svmObj.fit(X_data_train,values);
-# values_predicted = svmObj.predict(X_data_train);
-# score_svm = mean_absolute_error(values,values_predicted)
-#
-# randomForestObj = RandomForestClassifier(n_estimators=n_estimators_best,
-#                                          max_features=max_features_best,
-#                                          max_depth=max_depth_best)
-# randomForestObj.fit(X_data_train,values);
-# values_predicted = randomForestObj.predict(X_data_train)
-# score_rf = mean_absolute_error(values,values_predicted)
-# Y_predict = []
-# Y_predict_notbest = []
-# fname_best = ''
-# fname_notbest = ''
-# print "svm_score_final: " + str(score_svm) + " rf_score_final: " + str(score_rf)
-# if(score_svm < score_rf):
-#     Y_predict = svmObj.predict(X_data_train)
-#     fname_best = 'testPredictSVM_best.txt'
-#     Y_predict_notbest = randomForestObj.predict(X_data_train)
-#     fname_notbest = 'testPredictRF_notbest.txt'
-# else:
-#     Y_predict = randomForestObj.predict(X_data_train)
-#     fname_best = 'testPredictRF_best.txt'
-#     Y_predict_notbest = svmObj.predict(X_data_train)
-#     fname_notbest = 'testPredictSVM_notbest.txt'
-#
-# np.savetxt(fname=fname_best,delimiter=',',X=Y_predict,fmt='%f')
-# np.savetxt(fname=fname_notbest,delimiter=',',X=Y_predict_notbest,fmt='%f')

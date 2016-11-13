@@ -36,7 +36,7 @@ X_data_test_professor = X_total[9000:, :];
 
 parameters_gbm = {'n_estimators': [30, 70, 100, 150, 200, 300, 500], 'loss':['lad'],
                   'max_depth': [3, 5],
-                  'max_features': [5, 10, 15, 20, 25, None], 'warm_start':[True],  'learning_rate':[0.1, 0.05, 0.01],}
+                  'max_features': [5, 10, 15, 20, 25, None], 'warm_start':[True],  'learning_rate':[0.1, 0.05, 0.01]}
 
 
 
