@@ -32,7 +32,7 @@ X_data_train = X_total[0:9000,:];
 X_data_test_professor = X_total[9000:,:];
 
 parameters_svm = [{'kernel': ['rbf'], 'gamma': [2**(-15), 2**(-10), 2**(-5), 2**(0), 2**(5), 2**(10), 2**(15)],
-                   'C': [2**(-10), 2**(-5), 2**(0), 2**(5), 2**(10)]} ]
+                   'C': [2**(-15),2**(-10), 2**(-5), 2**(0), 2**(5), 2**(10),2**(15)]} ]
 parameters_rf = {'n_estimators': [50, 100, 200, 300,400, 500, 1000], 'max_features':[5, 10, 15, 20, 25], 'max_depth':[5,None]}
 parameters_gbm = {'n_estimators': [30, 70, 100, 150, 200, 300, 500], 'loss':['lad'],
                   'max_depth': [3, 5, 10],
