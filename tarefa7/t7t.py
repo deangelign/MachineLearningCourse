@@ -64,8 +64,10 @@ def computarN(X, threshold):
 
     return sum(bubbles_n2)
 
-def acharAnomalia(X, threshold):
-    N = computarN(X,threshold)
+def acharAnomalia(X):
+    dataStd = np.std(X);
+    print "deviation: " + str(dataStd)
+    N = computarN(X,dataStd)
     N = int(N)
     print "N: " + str(N)
 
@@ -102,18 +104,18 @@ def acharAnomalia(X, threshold):
 #encontra as anomalias
 t1 = 15.0
 s1 = ReadData('serie1.csv')
-acharAnomalia(s1, t1)
+acharAnomalia(s1)
 
 s2 = ReadData('serie2.csv')
-acharAnomalia(s2, t1)
+acharAnomalia(s2)
 
 s3 = ReadData('serie3.csv')
-acharAnomalia(s3, t1)
+acharAnomalia(s3)
 
 s4 = ReadData('serie4.csv')
-acharAnomalia(s4, t1)
+acharAnomalia(s4)
 t2 = 1.5
 s5 = ReadData('serie5.csv')
-acharAnomalia(s5, t2)
+acharAnomalia(s5)
 #------------------------------------------------------#
     
