@@ -55,6 +55,7 @@ BAG_DATA_Binary = np.array(vect_binary.fit_transform(dataset.data).toarray())
 X_TRAIN_BINARY, X_TEST_BINARY, Y_TRAIN_BINARY, Y_TEST_BINARY = train_test_split(BAG_DATA_Binary, categorias,
                                                                                 test_size=0.2,
                                                                                 random_state=random_state_seed);
+print BAG_DATA_Binary
 del BAG_DATA_Binary
 naiveBayesMNB_OBJ = MultinomialNB()
 naiveBayesMNB_OBJ.fit(X_TRAIN_BINARY, Y_TRAIN_BINARY)
@@ -85,18 +86,21 @@ del BAG_DATA
 del TermFrequencyData
 del dataset
 del categorias
-lrObj2 = LogisticRegression(C=10000)
-lrObj2.fit(X_TRAIN_TF, Y_TRAIN_TF)
-print("-------------Logistic Regression with term frequency--------")
-print(metrics.classification_report(Y_TEST_TF, lrObj2.predict(X_TEST_TF),target_names=categorias_names));
-#print("-------------------------------------------")
-print("accuracy: {0}%".format(100*accuracy_score(Y_TEST_TF, lrObj2.predict(X_TEST_TF))))
-print
+# # lrObj2 = LogisticRegression(C=10000)
+# # lrObj2.fit(X_TRAIN_TF, Y_TRAIN_TF)
+# print("-------------Logistic Regression with term frequency--------")
+# print(metrics.classification_report(Y_TEST_TF, lrObj2.predict(X_TEST_TF),target_names=categorias_names));
+# #print("-------------------------------------------")
+# print("accuracy: {0}%".format(100*accuracy_score(Y_TEST_TF, lrObj2.predict(X_TEST_TF))))
+# print
 
 pca = PCA(n_components=0.99,copy=False)
 pca.fit(X_TRAIN_TF)
 X_TRAIN_TF_PCA = pca.transform(X_TRAIN_TF)
 X_TEST_TF_PCA = pca.transform(X_TEST_TF)
+print len(X_TRAIN_TF_PCA)
+print len(X_TRAIN_TF_PCA[0])
+
 del X_TRAIN_TF
 del X_TEST_TF
 

@@ -17,7 +17,8 @@ from sklearn.ensemble import RandomForestClassifier
 import matplotlib.pyplot as plt
 import operator
 
-values = np.loadtxt('serie1.csv', delimiter = ',', usecols=(1,),skiprows=1);
+np.set_printoptions(threshold='nan')
+values = np.loadtxt('serie2.csv', delimiter = ',', usecols=(1,),skiprows=1);
 indices = np.array(range(0,len(values)))
 
 data = np.column_stack((indices,values))
@@ -30,26 +31,13 @@ iteration = 0
 bubbles_c = np.array([])
 bubbles_n = np.array([])
 bubbles_r = np.array([])
-bubbles_r_default = 10;
+bubbles_r_default = 7.5;
 numberMinOutliers = 5;
 
 outliers = np.array([])
 
 res = abs(data[:,1] - np.array([100]))
 min_index, min_value = min(enumerate(res), key=operator.itemgetter(1));
-
-#ex = np.array([True ,False, False, False, True, True, False])
-#index = np.nonzero(ex)
-#print index
-#print len(index[0])
-#print ex
-#print ex[index]
-#print np.sum(ex[index])
-#ex = np.delete(ex,index)
-#print ex
-
-#print data[:,1]
-#print res
 
 iter = 0
 iterMax = numberMinOutliers
@@ -112,22 +100,20 @@ while True:
 
 
 #nice print
-# order_indices = np.argsort(bubbles_n)
-# bubbles_n_sorted = bubbles_n[order_indices]
-# bubbles_c_sorted = bubbles_c[order_indices]
-# bubbles_n_sorted = bubbles_n_sorted[::-1]
-# bubbles_c_sorted = bubbles_c_sorted[::-1]
-# colorPower = bubbles_n_sorted/bubbles_n_sorted[0]
-# color_poins = []
-#
-# for index in range(0,len(values)):
-#     closerBubble = abs(bubbles_c_sorted - values[index])
-#     min_index, min_value = min(enumerate(closerBubble), key=operator.itemgetter(1));
-#     plt.plot(indices[index],values[index],'o',color=(colorPower[min_index],0,0))
-#
-# print bubbles_c_sorted
-# print bubbles_n_sorted
-# plt.show()
+order_indices = np.argsort(bubbles_n)
+bubbles_n_sorted = bubbles_n[order_indices]
+bubbles_c_sorted = bubbles_c[order_indices]
+bubbles_n_sorted = bubbles_n_sorted[::-1]
+bubbles_c_sorted = bubbles_c_sorted[::-1]
+colorPower = bubbles_n_sorted/bubbles_n_sorted[0]
+color_poins = []
+
+for index in range(0,len(values)):
+    closerBubble = abs(bubbles_c_sorted - values[index])
+    min_index, min_value = min(enumerate(closerBubble), key=operator.itemgetter(1));
+    plt.plot(indices[index],values[index],'o',color=(colorPower[min_index],0,0))
+
+plt.show()
 #
 order_indices = np.argsort(bubbles_c)
 bubbles_n_sorted = bubbles_n[order_indices]
@@ -165,6 +151,14 @@ while(bubble_i < len(bubbles_c_sorted)-1):
     else:
         bubble_i = bubble_i + 1
 
+probAnomaliaDeBolhas = bubbles_n_sorted[:]/sum(bubbles_n_sorted)
+print probAnomaliaDeBolhas
+#anomalia de bolhas
+for index in range(1,len(values)):
+    closerBubble = abs(bubbles_c_sorted - values[index])
+    min_index, min_value = min(enumerate(closerBubble), key=operator.itemgetter(1));
+
+
 #nice print
 # order_indices = np.argsort(bubbles_n_sorted)
 # bubbles_n_sorted2 = bubbles_n_sorted[order_indices]
@@ -174,19 +168,24 @@ while(bubble_i < len(bubbles_c_sorted)-1):
 # colorPower = bubbles_n_sorted2/bubbles_n_sorted2[0]
 #
 #
+#
 # for index in range(0,len(values)):
 #     closerBubble = abs(bubbles_c_sorted2 - values[index])
 #     min_index, min_value = min(enumerate(closerBubble), key=operator.itemgetter(1));
 #     plt.plot(indices[index],values[index],'o',color=(colorPower[min_index],0,0))
 #
 # plt.show()
+
+
 closerBubble = abs(bubbles_c_sorted - values[0])
 min_index, min_value = min(enumerate(closerBubble), key=operator.itemgetter(1));
 acc = 1
 last_bubbles = np.array([[min_index],[1],[acc]])
 acc += 1
 frequencyChange = np.zeros(shape=(len(bubbles_c_sorted),len(bubbles_c_sorted)))
-
+bubleDuration = frequencyChange
+durationCounter = 0
+repetition_bubles = frequencyChange
 
 
 bubble_i = 0
@@ -195,21 +194,37 @@ for index in range(1,len(values)):
     min_index, min_value = min(enumerate(closerBubble), key=operator.itemgetter(1));
     if min_index == last_bubbles[0,bubble_i]:
         last_bubbles[1,bubble_i] = last_bubbles[1,bubble_i] + 1
+        durationCounter =  durationCounter + 1
         last_bubbles[2, bubble_i] = acc
         acc += 1
     else:
         frequencyChange[last_bubbles[0, bubble_i], min_index] += 1
         aux = np.array([[min_index], [1],[acc]])
+        bubleDuration[last_bubbles[0, bubble_i], min_index] = (bubleDuration[last_bubbles[0, bubble_i], min_index]*\
+                                                              repetition_bubles[last_bubbles[0, bubble_i], min_index] + \
+                                                              durationCounter)/(repetition_bubles[last_bubbles[0, bubble_i], min_index]+1)
+        durationCounter = 0
+        repetition_bubles[last_bubbles[0, bubble_i], min_index] += 1
         last_bubbles = np.concatenate((last_bubbles, aux),axis=1)
         bubble_i = bubble_i+1
         acc += 1
+        repetition = 0
+
 
 
 last_bubbles = last_bubbles.T
+print bubbles_c_sorted
+print bubbles_n_sorted
+print last_bubbles
+print frequencyChange
+print "duracao: "
+print bubleDuration
 probChange = frequencyChange
-t = 0.1
+t = 0.06
 for i in range(0,len(bubbles_c_sorted)):
     probChange[i,:] = frequencyChange[i,:]/sum(frequencyChange[i,:])
+
+print probChange
 
 
 closerBubble = abs(bubbles_c_sorted - values[0])
@@ -239,8 +254,20 @@ for index in range(1,len(values)):
                 last_index = min_index
             else:
                 flag_anomaly = True
+                print "anomalia comecando em: " + str(last_index) + " ->" +str(min_index)
 
             plt.plot(indices[index], values[index], 'o', color=(1, 0, 0))
 
 
 plt.show()
+
+closerBubble = abs(bubbles_c_sorted - values[0])
+min_index, min_value = min(enumerate(closerBubble), key=operator.itemgetter(1));
+last_index = min_index
+vec_bubbleOutliers = np.zeros(shape=(1,len(values)))
+vec_bubbleFreq = np.zeros(shape=(1,len(values)))
+vec_bubbleDuration = np.zeros(shape=(1,len(values)))
+for index in range(1,len(values)):
+    closerBubble = abs(bubbles_c_sorted - values[index])
+    min_index, min_value = min(enumerate(closerBubble), key=operator.itemgetter(1));
+
