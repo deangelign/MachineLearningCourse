@@ -102,7 +102,7 @@ def acharAnomalia(X):
     plt.show()
 
 #encontra as anomalias
-t1 = 15.0
+
 s1 = ReadData('serie1.csv')
 acharAnomalia(s1)
 
@@ -114,7 +114,7 @@ acharAnomalia(s3)
 
 s4 = ReadData('serie4.csv')
 acharAnomalia(s4)
-t2 = 1.5
+
 s5 = ReadData('serie5.csv')
 acharAnomalia(s5)
 #------------------------------------------------------#
